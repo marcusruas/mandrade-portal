@@ -5,12 +5,12 @@ const Cabecalho = () => {
     const { Header } = Layout;
     return (
         <Header className="Cabecalho">
-            <div className="Cabecalho_Titulo">
+            <span className="Cabecalho_Titulo">
                 PORTAL MANDRADE
-            </div>
-            <div className="Cabecalho_Descricao">
+            </span>
+            <span className="Cabecalho_Descricao">
                 É MEIO QUE SÓ ISSO MESMO...
-            </div>
+            </span>
         </Header>
     );
 };

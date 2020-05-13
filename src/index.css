@@ -13,8 +13,6 @@ body {
 }
 
 .Cabecalho_Titulo, .Cabecalho_Descricao {
-  padding: inherit;
-  margin: inherit;
   color: white;
   font-weight: bolder;
   font-size: 32px;
@@ -27,4 +25,20 @@ body {
   font-size: 16px;
   text-align: right;
   width: 50%;
+}
+
+.Menus{
+  background-color: #1890ff;
+  color: white;
+}
+
+.Menus .ant-menu-submenu .ant-menu{
+  background-color: #2f54eb;
+  color: white;
+}
+
+.Menus .ant-menu-submenu .ant-menu .ant-menu-item:hover,
+.Menus .ant-menu-submenu-title:hover
+{
+  color: #030852;
 }
