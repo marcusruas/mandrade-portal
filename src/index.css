@@ -5,3 +5,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #adc6ff;
 }
+
+.Cabecalho {
+  padding: none;
+  margin: none;
+  background-color: #2f54eb;
+}
+
+.Cabecalho_Titulo, .Cabecalho_Descricao {
+  padding: inherit;
+  margin: inherit;
+  color: white;
+  font-weight: bolder;
+  font-size: 32px;
+  text-align: left;
+  width: 50%;
+  float: left;
+}
+
+.Cabecalho_Descricao {
+  font-size: 16px;
+  text-align: right;
+  width: 50%;
+}
