@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 
 import Cabecalho from './Layout/Cabecalho';
 import Menus from './Layout/Menus';
+import Corpo from './Layout/Corpo';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Cabecalho />
         <Layout>
           <Menus />
+          <Layout>
+            <Corpo />
+          </Layout>
         </Layout>
       </Layout>
     </React.Fragment>
