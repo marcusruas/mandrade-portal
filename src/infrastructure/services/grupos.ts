@@ -1,9 +1,10 @@
 import axios from 'axios';
 import Grupo from '../models/usuario/Grupo';
+import UriApi from '../consts';
 
 const AdicionarNovoGrupo = async (grupo: Grupo) => {
     try {
-        await axios.post('http://localhost:5000/Usuarios/Grupos/IncluirNovoGrupo', { ...grupo });
+        const retorno = await axios.post(`${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo });
     }
     catch (error) {
         console.log(error);
