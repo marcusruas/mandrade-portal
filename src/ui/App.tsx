@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import { Layout } from 'antd';
 
 import Cabecalho from './Layout/Cabecalho';
@@ -17,6 +18,7 @@ function App() {
           </Layout>
         </Layout>
       </Layout>
+      <ToastContainer />
     </React.Fragment>
   );
 }
