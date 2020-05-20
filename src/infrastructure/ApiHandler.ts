@@ -7,6 +7,12 @@ const GerenciarRequisicao = async (apiCall: AxiosPromise) => {
     try {
         await apiCall;
     } catch (error) {
+        if (!error.response) {
+            toast.error('Falha ao processar solicitação. Favor entrar em contato com suporte');
+            console.log('Não foi possível se conectar com a API para realizar a requisição.');
+            return;
+        }
+
         const respostaErro = error.response.data;
         const retorno = new RetornoErroApi(
             respostaErro.dados.codigoRetorno,
