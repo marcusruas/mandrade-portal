@@ -6,20 +6,27 @@ import Cabecalho from './Layout/Cabecalho';
 import Menus from './Layout/Menus';
 import Corpo from './Layout/Corpo';
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux';
+import Reducers from '../store/reducers'
+
 function App() {
+  const store = createStore(Reducers);
   return (
-    <React.Fragment>
-      <Layout style={{ minHeight: "100vh" }}>
-        <Cabecalho />
-        <Layout>
-          <Menus />
+    <Provider store={store}>
+      <React.Fragment>
+        <Layout style={{ minHeight: "100vh" }}>
+          <Cabecalho />
           <Layout>
-            <Corpo />
+            <Menus />
+            <Layout>
+              <Corpo />
+            </Layout>
           </Layout>
         </Layout>
-      </Layout>
-      <ToastContainer />
-    </React.Fragment>
+        <ToastContainer />
+      </React.Fragment>
+    </Provider>
   );
 }
 
