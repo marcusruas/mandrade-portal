@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import MensagensReducer from './mensagensReducer';
+import { MensagensReducer } from './mensagensReducer';
 
-const reducers = {
+const Reducers = combineReducers({
     Mensagens: MensagensReducer
-}
+})
 
-export default combineReducers(reducers);
+export default Reducers;

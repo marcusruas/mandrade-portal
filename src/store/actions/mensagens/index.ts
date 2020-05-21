@@ -1,15 +1,21 @@
-import MensagemApi from "../../../infrastructure/models/ApiModels/MensagemApi";
+import * as MensagensActionTypes from './types';
+import MensagemApi from '../../../infrastructure/models/ApiModels/MensagemApi';
 
-import * as MensagensTypes from './types';
-
-
-const AdicionarMensagem = (mensagem: MensagemApi) => {
+const AdicionarErroValidacao = (mensagem: MensagemApi): MensagensActionTypes.MensagensActionTypes => {
     return {
-        type: MensagensTypes.adicionarErroValidacao,
+        type: MensagensActionTypes.adicionarErroValidacao,
+        payload: mensagem
+    }
+}
+
+const RemoverErroValidacao = (mensagem: MensagemApi): MensagensActionTypes.MensagensActionTypes => {
+    return {
+        type: MensagensActionTypes.removerErroValidacao,
         payload: mensagem
     }
 }
 
 export {
-    AdicionarMensagem
+    AdicionarErroValidacao,
+    RemoverErroValidacao,
 }

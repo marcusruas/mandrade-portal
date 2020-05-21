@@ -1,19 +1,29 @@
 import * as MensagensTypes from '../actions/mensagens/types';
 
-const initialState = {
+interface MensagensState {
     mensagensErro: [],
     mensagensInformativas: [],
     mensagensAlertas: [],
     errosValidacao: []
 }
 
-const MensagensReducer = (state = initialState, action: { type: string }) => {
+const initialState: MensagensState = {
+    mensagensErro: [],
+    mensagensInformativas: [],
+    mensagensAlertas: [],
+    errosValidacao: []
+}
+
+const MensagensReducer = (state = initialState, action: MensagensTypes.MensagensActionTypes) => {
     switch (action.type) {
         case MensagensTypes.adicionarErroValidacao:
             return { ...state, errosValidacao: [...state.errosValidacao] }
+        case MensagensTypes.removerErroValidacao:
+            return { ...state, errosValidacao: [...state.errosValidacao.filter(m => m !== action.payload)] }
         default:
             return state;
     }
 }
 
-export default MensagensReducer;
+export { MensagensReducer };
+export type { MensagensState };
