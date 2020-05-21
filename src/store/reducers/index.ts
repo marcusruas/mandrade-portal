@@ -5,4 +5,5 @@ const Reducers = combineReducers({
     Mensagens: MensagensReducer
 })
 
-export default Reducers;
+export type ReducersType = ReturnType<typeof Reducers>;
+export { Reducers }

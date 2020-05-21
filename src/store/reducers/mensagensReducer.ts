@@ -1,10 +1,12 @@
 import * as MensagensTypes from '../actions/mensagens/types';
+import MensagemApi from '../../infrastructure/models/ApiModels/MensagemApi';
+import * as _ from 'lodash'
 
 interface MensagensState {
-    mensagensErro: [],
-    mensagensInformativas: [],
-    mensagensAlertas: [],
-    errosValidacao: []
+    mensagensErro: MensagemApi[],
+    mensagensInformativas: MensagemApi[],
+    mensagensAlertas: MensagemApi[],
+    errosValidacao: MensagemApi[]
 }
 
 const initialState: MensagensState = {
@@ -17,13 +19,16 @@ const initialState: MensagensState = {
 const MensagensReducer = (state = initialState, action: MensagensTypes.MensagensActionTypes) => {
     switch (action.type) {
         case MensagensTypes.adicionarErroValidacao:
-            return { ...state, errosValidacao: [...state.errosValidacao] }
+            return { ...state, errosValidacao: [...state.errosValidacao, action.payload] }
         case MensagensTypes.removerErroValidacao:
-            return { ...state, errosValidacao: [...state.errosValidacao.filter(m => m !== action.payload)] }
+            return {
+                ...state,
+                errosValidacao: [...state.errosValidacao.filter(m => !_.isEqual(m, action.payload))]
+            }
         default:
             return state;
     }
 }
 
 export { MensagensReducer };
-export type { MensagensState };
+export type MensagensReducerType = MensagensState;
