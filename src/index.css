@@ -6,13 +6,15 @@ body {
   background-color: #adc6ff;
 }
 
+/* Layout */
+
 .Cabecalho {
   padding: none;
   margin: none;
   background-color: #2f54eb;
 }
 
-.Cabecalho_Titulo, .Cabecalho_Descricao {
+.Cabecalho_Titulo, .Cabecalho_Mensageria {
   color: white;
   font-weight: bolder;
   font-size: 32px;
@@ -21,7 +23,7 @@ body {
   float: left;
 }
 
-.Cabecalho_Descricao {
+.Cabecalho_Mensageria {
   font-size: 16px;
   text-align: right;
   width: 50%;
@@ -34,6 +36,10 @@ body {
 
 .Menus .ant-menu-submenu .ant-menu{
   background-color: #2f54eb;
+  color: white;
+}
+
+.Menus .ant-menu-submenu-selected{
   color: white;
 }
 
@@ -58,4 +64,34 @@ body {
   border-radius: 2%;
   font-family: -apple-system, BlinkMacSystemFont, "Lucida Console", Monaco, monospace;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Mensageria */
+.Mensageria {
+  width: 300px;
+  height: 400px;
+  background-color: #002766;
+  border-radius: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.Mensageria_Controle {
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #1890ff;
+}
+
+.Mensageria_Mensagem {
+  display: block;
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  color: white;
+  border-bottom: 1px solid #2f54eb;
+  background-color: #531dab;
+  padding-left: 5px;
 }
