@@ -14,7 +14,15 @@ const RemoverErroValidacao = (mensagem: string): MensagensActionTypes.MensagensA
     }
 }
 
+
+const RemoverTodasMensagens = (): MensagensActionTypes.MensagensActionTypes => {
+    return {
+        type: MensagensActionTypes.removerTodasMensagens,
+    }
+}
+
 export {
     AdicionarErroValidacao,
     RemoverErroValidacao,
+    RemoverTodasMensagens,
 }

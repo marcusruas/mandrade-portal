@@ -1,5 +1,6 @@
 const adicionarErroValidacao = 'MENSAGENS_ADICIONAR_ERRO_VALIDACAO';
 const removerErroValidacao = 'MENSAGENS_REMOVER_ERRO_VALIDACAO';
+const removerTodasMensagens = 'MENSAGENS_REMOVER_TODOS';
 
 interface AdicionarErroValidacao {
     type: typeof adicionarErroValidacao,
@@ -11,9 +12,14 @@ interface RemoverErroValidacao {
     payload: string
 }
 
+interface RemoverTodasMensagens {
+    type: typeof removerTodasMensagens
+}
 
-export type MensagensActionTypes = AdicionarErroValidacao | RemoverErroValidacao;
+
+export type MensagensActionTypes = AdicionarErroValidacao | RemoverErroValidacao | RemoverTodasMensagens;
 export {
     adicionarErroValidacao,
-    removerErroValidacao
+    removerErroValidacao,
+    removerTodasMensagens
 }

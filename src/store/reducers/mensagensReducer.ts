@@ -24,6 +24,10 @@ const MensagensReducer = (state = initialState, action: MensagensTypes.Mensagens
                 ...state,
                 errosValidacao: [...state.errosValidacao.filter(m => !_.isEqual(m, action.payload))]
             }
+        case MensagensTypes.removerTodasMensagens:
+            return {
+                ...initialState
+            }
         default:
             return state;
     }

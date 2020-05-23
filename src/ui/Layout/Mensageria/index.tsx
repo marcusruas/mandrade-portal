@@ -14,8 +14,8 @@ const mapStateToProps = (state: ReducersType) => ({
 
 const mapDispatchToProps = (dispatch: any) => {
     const actions = {
-        adicionarErroValidacao: (mensagem: string) =>
-            dispatch(MensagensActions.AdicionarErroValidacao(mensagem)),
+        removerTodasMensagens: () =>
+            dispatch(MensagensActions.RemoverTodasMensagens()),
     }
 
     return actions;
@@ -29,7 +29,11 @@ class Mensageria extends React.PureComponent<Propriedades> {
         return (
             <div className="Mensageria">
                 <div className="Mensageria_Controle">
-                    <Button danger icon={< CloseCircleOutlined />}>Excluir Tudo</Button>
+                    <Button
+                        danger
+                        icon={< CloseCircleOutlined />}
+                        onClick={() => this.props.removerTodasMensagens()}
+                    >Excluir Tudo</Button>
                 </div>
                 {this.props.Mensagens.errosValidacao.map(msg => (<Mensagem Tipo={3} Texto={msg} />))}
                 {this.props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}
