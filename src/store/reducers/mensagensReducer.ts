@@ -1,12 +1,11 @@
 import * as MensagensTypes from '../actions/mensagens/types';
-import MensagemApi from '../../infrastructure/models/ApiModels/MensagemApi';
 import * as _ from 'lodash'
 
 interface MensagensState {
-    mensagensErro: MensagemApi[],
-    mensagensInformativas: MensagemApi[],
-    mensagensAlertas: MensagemApi[],
-    errosValidacao: MensagemApi[]
+    mensagensErro: string[],
+    mensagensInformativas: string[],
+    mensagensAlertas: string[],
+    errosValidacao: string[]
 }
 
 const initialState: MensagensState = {

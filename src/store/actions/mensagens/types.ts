@@ -1,18 +1,14 @@
-import MensagemApi from "../../../infrastructure/models/ApiModels/MensagemApi";
-import * as MensagensTypes from './types';
-
-
 const adicionarErroValidacao = 'MENSAGENS_ADICIONAR_ERRO_VALIDACAO';
 const removerErroValidacao = 'MENSAGENS_REMOVER_ERRO_VALIDACAO';
 
 interface AdicionarErroValidacao {
-    type: typeof MensagensTypes.adicionarErroValidacao,
-    payload: MensagemApi
+    type: typeof adicionarErroValidacao,
+    payload: string
 }
 
 interface RemoverErroValidacao {
-    type: typeof MensagensTypes.removerErroValidacao,
-    payload: MensagemApi
+    type: typeof removerErroValidacao,
+    payload: string
 }
 
 
