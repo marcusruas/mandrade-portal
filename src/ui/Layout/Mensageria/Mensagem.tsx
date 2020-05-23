@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 interface PropriedadesMensagem {
     Tipo: number,
@@ -26,9 +27,33 @@ class Mensagem extends React.PureComponent<PropriedadesMensagem> {
         mensagem && mensagem.length > 30 ?
             mensagem.substring(0, 27) + '...' : mensagem;
 
+    mostrarMensagem = () => {
+        switch (this.props.Tipo) {
+            case 0:
+                toast.info(this.props.Texto);
+                break;
+            case 1:
+                toast.warning(this.props.Texto);
+                break;
+            case 2:
+                toast.error(this.props.Texto);
+                break;
+            case 3:
+                toast.success(this.props.Texto);
+                break;
+            default:
+                toast.dark(this.props.Texto)
+                break;
+        }
+    }
+
     render() {
         return (
-            <div className="Mensageria_Mensagem" style={{ backgroundColor: GetCorByTipo(this.props.Tipo) }}>
+            <div
+                className="Mensageria_Mensagem"
+                style={{ backgroundColor: GetCorByTipo(this.props.Tipo) }}
+                onClick={() => this.mostrarMensagem()}
+            >
                 {this.formatarMensagem(this.props.Texto)}
             </div>
         )

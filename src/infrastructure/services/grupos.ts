@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import Grupo from '../models/usuario/Grupo';
-import UriApi from '../consts';
+import Grupo from 'infrastructure/models/usuario/Grupo';
+import UriApi from 'infrastructure/consts';
 import GerenciarRequisicao from '../ApiHandler';
 
 const AdicionarNovoGrupo = async (grupo: Grupo) => {

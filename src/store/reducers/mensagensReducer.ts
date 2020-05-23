@@ -1,4 +1,4 @@
-import * as MensagensTypes from '../actions/mensagens/types';
+import * as MensagensTypes from 'store/actions/mensagens/types';
 import * as _ from 'lodash'
 
 interface MensagensState {

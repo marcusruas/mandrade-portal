@@ -93,4 +93,5 @@ body {
   color: white;
   border-bottom: 1px solid #2f54eb;
   padding-left: 5px;
+  cursor: pointer;
 }

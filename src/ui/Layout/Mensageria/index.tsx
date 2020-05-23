@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from 'antd';
 import { CloseCircleOutlined } from '@ant-design/icons';
 
-import * as MensagensActions from '../../../store/actions/mensagens/';
-import { ReducersType } from '../../../store/reducers/index';
+import * as MensagensActions from 'store/actions/mensagens/';
+import { ReducersType } from 'store/reducers/index';
 
 import Mensagem from './Mensagem';
 import { connect, ConnectedProps } from 'react-redux';
