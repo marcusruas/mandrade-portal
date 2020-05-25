@@ -1,6 +1,6 @@
 import MensagemApi from "./MensagemApi";
 
-class RetornoApi {
+class RetornoErroApi {
     CodigoRetorno: number;
     MensagemPadrao: string;
     DescricaoErro: string;
@@ -23,4 +23,4 @@ class RetornoApi {
     }
 }
 
-export default RetornoApi;
+export default RetornoErroApi;

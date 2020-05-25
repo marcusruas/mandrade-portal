@@ -36,8 +36,8 @@ class Mensageria extends React.PureComponent<Propriedades> {
                     >Excluir Tudo</Button>
                 </div>
                 {this.props.Mensagens.errosValidacao.map(msg => (<Mensagem Tipo={3} Texto={msg} />))}
-                {this.props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}
                 {this.props.Mensagens.mensagensErro.map(msg => (<Mensagem Tipo={0} Texto={msg} />))}
+                {this.props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}
                 {this.props.Mensagens.mensagensInformativas.map(msg => (<Mensagem Tipo={1} Texto={msg} />))}
             </div>
         )
