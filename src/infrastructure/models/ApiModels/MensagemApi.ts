@@ -1,12 +1,12 @@
 class MensagemApi {
-    tipo: number;
-    texto: string;
+    Tipo: number;
+    Texto: string;
     constructor(
         tipo: number,
         texto: string
     ) {
-        this.tipo = tipo;
-        this.texto = texto;
+        this.Tipo = tipo;
+        this.Texto = texto;
     }
 }
 

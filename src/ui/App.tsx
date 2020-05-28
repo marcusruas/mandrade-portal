@@ -8,7 +8,7 @@ import Corpo from './Layout/Corpo';
 
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
-import { Reducers } from 'store/reducers'
+import { Reducers } from 'Store/Reducers'
 
 function App() {
   const store = createStore(Reducers);

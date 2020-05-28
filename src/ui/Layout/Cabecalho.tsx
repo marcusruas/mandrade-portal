@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown, Button, Layout } from 'antd';
 import { MessageOutlined } from '@ant-design/icons';
 
-import Mensageria from './Mensageria/';
+import Mensageria from './Mensageria';
 
 const Mensagens = (
     <Mensageria />

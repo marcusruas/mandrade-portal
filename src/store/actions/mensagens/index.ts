@@ -1,4 +1,4 @@
-import * as MensagensActionTypes from './types';
+import * as MensagensActionTypes from './Types';
 
 const AdicionarErroValidacao = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
     return {

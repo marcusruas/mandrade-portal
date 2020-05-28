@@ -2,8 +2,8 @@ import { MiddlewareAPI, Dispatch, Middleware } from 'redux';
 import { AxiosPromise } from "axios";
 import { toast } from 'react-toastify';
 
-import RetornoErroApi from 'infrastructure/models/ApiModels/RetornoErroApi';
-import RetornoSucessoApi from './models/ApiModels/RetornoSucessoApi';
+import RetornoErroApi from 'Infrastructure/Models/ApiModels/RetornoErroApi';
+import RetornoSucessoApi from './Models/ApiModels/RetornoSucessoApi';
 
 const GerenciarRequisicao = async (apiCall: AxiosPromise) => {
     try {
