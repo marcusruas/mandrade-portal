@@ -1,15 +1,14 @@
 import UriApi from 'Infrastructure/Consts';
-import GerenciarRequisicao from '../../ApiHandler';
+import FormatarRequisicao from '../../ApiHandler';
 import axios from 'axios';
 
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 
-const AdicionarNovoGrupo = (grupo: Grupo): Array<Grupo> => {
-    const retorno = GerenciarRequisicao(axios.post(
-        `${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo }
-    ));
-    console.log(retorno);
-    return [];
+const AdicionarNovoGrupo = async (grupo: Grupo) => {
+    const apiCall = await axios.post(`${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo });
+    const retorno = FormatarRequisicao(apiCall);
+
+    return retorno;
 }
 
 export { AdicionarNovoGrupo }

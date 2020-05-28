@@ -1,13 +1,13 @@
-import { MiddlewareAPI, Dispatch, Middleware } from 'redux';
-import { AxiosPromise } from "axios";
+import { AxiosResponse } from "axios";
 import { toast } from 'react-toastify';
 
 import RetornoErroApi from 'Infrastructure/Models/ApiModels/RetornoErroApi';
 import RetornoSucessoApi from './Models/ApiModels/RetornoSucessoApi';
 
-const GerenciarRequisicao = async (apiCall: AxiosPromise) => {
+type Retornos = RetornoErroApi | RetornoSucessoApi | null;
+
+const FormatarRequisicao = (retorno: AxiosResponse): Retornos => {
     try {
-        const retorno = await apiCall;
         if (!retorno.data) {
             toast.error('Não foi possível validar as informações passadas. Tente novamente mais tarde');
             return null;
@@ -22,7 +22,7 @@ const GerenciarRequisicao = async (apiCall: AxiosPromise) => {
         if (!error.response) {
             toast.error('Falha ao processar solicitação. Favor entrar em contato com suporte');
             console.log('Não foi possível se conectar com a API para realizar a requisição.');
-            return;
+            return null;
         }
 
         const respostaErro = error.response.data;
@@ -42,7 +42,6 @@ const GerenciarRequisicao = async (apiCall: AxiosPromise) => {
 
         return retorno;
     }
-
 }
 
-export default GerenciarRequisicao;
+export default FormatarRequisicao;

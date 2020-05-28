@@ -6,7 +6,7 @@ import Cabecalho from './Layout/Cabecalho';
 import Menus from './Layout/Menus';
 import Corpo from './Layout/Corpo';
 
-import { createStore, applyMiddleware } from 'redux'
+import { createStore } from 'redux'
 import { Provider } from 'react-redux';
 import { Reducers } from 'Store/Reducers'
 

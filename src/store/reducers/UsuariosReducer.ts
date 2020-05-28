@@ -1,5 +1,4 @@
 import * as GruposTypes from 'Store/Actions/Usuarios/Grupos/Types';
-import * as _ from 'lodash'
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 
 interface UsuariosState {

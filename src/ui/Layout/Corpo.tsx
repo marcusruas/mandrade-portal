@@ -1,11 +1,13 @@
 import React from 'react';
 import { Layout } from 'antd'
 
+import NovoGrupo from 'Ui/Usuarios/Grupos/NovoGrupo/';
+
 const Corpo = () => {
     const { Content } = Layout;
     return (
         <Content className="Corpo">
-            Content
+            <NovoGrupo />
         </Content>
     )
 }
