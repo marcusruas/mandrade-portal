@@ -6,12 +6,13 @@ import Cabecalho from './Layout/Cabecalho';
 import Menus from './Layout/Menus';
 import Corpo from './Layout/Corpo';
 
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import promise from 'redux-promise';
 import { Provider } from 'react-redux';
 import { Reducers } from 'Store/Reducers'
 
 function App() {
-  const store = createStore(Reducers);
+  const store = createStore(Reducers, applyMiddleware(promise));
   return (
     <Provider store={store}>
       <React.Fragment>

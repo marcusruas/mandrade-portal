@@ -4,12 +4,9 @@ import axios from 'axios';
 
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 
-import RetornoErroApi from 'Infrastructure/Models/ApiModels/RetornoErroApi';
-import RetornoSucessoApi from 'Infrastructure/Models/ApiModels/RetornoSucessoApi';
+import * as RetornoApi from 'Infrastructure/Models/ApiModels/RetornoApi';
 
-export type TipoRetorno = RetornoErroApi | RetornoSucessoApi | null;
-
-const AdicionarNovoGrupo = async (grupo: Grupo) => {
+const AdicionarNovoGrupo = async (grupo: Grupo): Promise<RetornoApi.RetornoApi> => {
     try {
         const apiCall = await axios.post(`${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo });
         const retorno = FormatarRequisicao(apiCall);
@@ -17,6 +14,7 @@ const AdicionarNovoGrupo = async (grupo: Grupo) => {
         return retorno;
     } catch (error) {
         console.log(error);
+        return RetornoApi.ErroPadraoRequisicao;
     }
 }
 
