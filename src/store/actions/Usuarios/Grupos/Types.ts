@@ -1,11 +1,10 @@
-import Grupo from "Infrastructure/Models/Usuarios/Grupo";
-import * as GruposTipo from 'Infrastructure/Services/Usuarios/Grupos';
+import * as RetornoApi from 'Infrastructure/Models/ApiModels/RetornoApi';
 
 const adicionarGrupoType = 'USUARIOS_ADICIONAR_GRUPO';
 
 interface AdicionarGrupo {
     type: typeof adicionarGrupoType,
-    Retorno: GruposTipo.TipoRetorno
+    Retorno: RetornoApi.RetornoApi
 }
 
 export { adicionarGrupoType }

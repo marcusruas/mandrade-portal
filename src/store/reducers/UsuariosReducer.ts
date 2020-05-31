@@ -1,6 +1,5 @@
 import * as GruposTypes from 'Store/Actions/Usuarios/Grupos/Types';
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
-import RetornoSucessoApi from 'Infrastructure/Models/ApiModels/RetornoSucessoApi';
 
 interface UsuariosState {
     Grupos: Array<Grupo>
@@ -10,14 +9,11 @@ const initialState: UsuariosState = {
     Grupos: []
 }
 
-const UsuariosReducer = (state = initialState, action: GruposTypes.UsuariosGrupoTypes) => {
+const UsuariosReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case GruposTypes.adicionarGrupoType:
-            if (typeof (action.Retorno) === typeof (RetornoSucessoApi)) {
-
-                return { ...state, Grupos: action.Retorno }
-            }
-            return { ...state, Grupos: action.Retorno }
+            console.log(action.payload);
+            return { ...state, Grupos: action.payload }
         default:
             return state;
     }

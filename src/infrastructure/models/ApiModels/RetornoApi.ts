@@ -17,11 +17,11 @@ export class RetornoApi {
     }
 }
 
-export class RetornoSucesso extends RetornoApi {
-    Dados: any;
+export class RetornoSucesso<T> extends RetornoApi {
+    Dados: T;
 
     constructor(
-        dados: any,
+        dados: T,
         mensagens: Array<MensagemApi>
     ) {
         super(true, mensagens);
@@ -55,5 +55,3 @@ export const ErroPadraoRequisicao = new RetornoErro(
     'Não foi possível se conectar com a API para realizar a requisição.',
     []
 );
-
-export type TipoRetorno = RetornoSucesso | RetornoErro;

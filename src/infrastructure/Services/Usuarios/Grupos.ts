@@ -7,15 +7,8 @@ import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 import * as RetornoApi from 'Infrastructure/Models/ApiModels/RetornoApi';
 
 const AdicionarNovoGrupo = async (grupo: Grupo): Promise<RetornoApi.RetornoApi> => {
-    try {
-        const apiCall = await axios.post(`${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo });
-        const retorno = FormatarRequisicao(apiCall);
-
-        return retorno;
-    } catch (error) {
-        console.log(error);
-        return RetornoApi.ErroPadraoRequisicao;
-    }
+    const requisicao = axios.post(`${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo });
+    return await FormatarRequisicao(requisicao);
 }
 
 export { AdicionarNovoGrupo }

@@ -3,10 +3,10 @@ import { toast } from 'react-toastify';
 
 import * as RetornoApi from 'Infrastructure/Models/ApiModels/RetornoApi';
 
-const FormatarRequisicao = (retorno: AxiosResponse): RetornoApi.TipoRetorno => {
-
-
+const FormatarRequisicao = async (requisicao: Promise<AxiosResponse<any>>): Promise<RetornoApi.RetornoApi> => {
     try {
+        const retorno = await requisicao;
+
         if (!retorno.data) {
             toast.error(RetornoApi.ErroPadraoRequisicao.MensagemPadrao);
             return RetornoApi.ErroPadraoRequisicao;
@@ -19,7 +19,7 @@ const FormatarRequisicao = (retorno: AxiosResponse): RetornoApi.TipoRetorno => {
     } catch (error) {
         if (!error.response) {
             toast.error(RetornoApi.ErroPadraoRequisicao.MensagemPadrao);
-            console.log(RetornoApi.ErroPadraoRequisicao.DescricaoErro);
+            console.log('Erro de requisição ', RetornoApi.ErroPadraoRequisicao.DescricaoErro);
             return RetornoApi.ErroPadraoRequisicao;
         }
 
