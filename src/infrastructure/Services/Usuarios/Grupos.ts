@@ -1,5 +1,5 @@
 import UriApi from 'Infrastructure/Consts';
-import FormatarRequisicao from '../../ApiHandler';
+import FormatarRequisicao from '../../FormatarRequisicao';
 import axios from 'axios';
 
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';

@@ -1,5 +1,4 @@
 import * as MensagensTypes from 'Store/Actions/Mensagens/Types';
-import * as _ from 'lodash'
 
 interface MensagensState {
     mensagensErro: string[],
@@ -19,11 +18,12 @@ const MensagensReducer = (state = initialState, action: MensagensTypes.Mensagens
     switch (action.type) {
         case MensagensTypes.adicionarErroValidacao:
             return { ...state, errosValidacao: [...state.errosValidacao, action.payload] }
-        case MensagensTypes.removerErroValidacao:
-            return {
-                ...state,
-                errosValidacao: [...state.errosValidacao.filter(m => !_.isEqual(m, action.payload))]
-            }
+        case MensagensTypes.adicionarMensagemErro:
+            return { ...state, errosValidacao: [...state.mensagensErro, action.payload] }
+        case MensagensTypes.adicionarMensagemInformativa:
+            return { ...state, errosValidacao: [...state.mensagensInformativas, action.payload] }
+        case MensagensTypes.adicionarMensagemAlerta:
+            return { ...state, errosValidacao: [...state.mensagensAlertas, action.payload] }
         case MensagensTypes.removerTodasMensagens:
             return {
                 ...initialState

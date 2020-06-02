@@ -7,13 +7,26 @@ const AdicionarErroValidacao = (mensagem: string): MensagensActionTypes.Mensagen
     }
 }
 
-const RemoverErroValidacao = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
+const AdicionarMensagemErro = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
     return {
-        type: MensagensActionTypes.removerErroValidacao,
+        type: MensagensActionTypes.adicionarMensagemErro,
         payload: mensagem
     }
 }
 
+const AdicionarMensagemInformativa = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
+    return {
+        type: MensagensActionTypes.adicionarMensagemInformativa,
+        payload: mensagem
+    }
+}
+
+const AdicionarMensagemAlerta = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
+    return {
+        type: MensagensActionTypes.adicionarMensagemAlerta,
+        payload: mensagem
+    }
+}
 
 const RemoverTodasMensagens = (): MensagensActionTypes.MensagensActionTypes => {
     return {
@@ -23,6 +36,8 @@ const RemoverTodasMensagens = (): MensagensActionTypes.MensagensActionTypes => {
 
 export {
     AdicionarErroValidacao,
-    RemoverErroValidacao,
+    AdicionarMensagemErro,
+    AdicionarMensagemInformativa,
+    AdicionarMensagemAlerta,
     RemoverTodasMensagens,
 }

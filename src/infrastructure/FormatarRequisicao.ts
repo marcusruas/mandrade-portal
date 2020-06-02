@@ -9,6 +9,7 @@ const FormatarRequisicao = async (requisicao: Promise<AxiosResponse<any>>): Prom
 
         if (!retorno.data) {
             toast.error(RetornoApi.ErroPadraoRequisicao.MensagemPadrao);
+            console.log('Retorno: ', retorno);
             return RetornoApi.ErroPadraoRequisicao;
         }
 
@@ -19,7 +20,7 @@ const FormatarRequisicao = async (requisicao: Promise<AxiosResponse<any>>): Prom
     } catch (error) {
         if (!error.response) {
             toast.error(RetornoApi.ErroPadraoRequisicao.MensagemPadrao);
-            console.log('Erro de requisição ', RetornoApi.ErroPadraoRequisicao.DescricaoErro);
+            console.log('Erro de requisição: ', RetornoApi.ErroPadraoRequisicao.DescricaoErro);
             return RetornoApi.ErroPadraoRequisicao;
         }
 
