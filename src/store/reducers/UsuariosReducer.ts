@@ -12,7 +12,7 @@ const initialState: UsuariosState = {
 const UsuariosReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case GruposTypes.adicionarGrupoType:
-            return { ...state, Grupos: action.payload }
+            return state;
         default:
             return state;
     }

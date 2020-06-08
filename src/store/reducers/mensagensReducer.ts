@@ -1,4 +1,5 @@
 import * as MensagensTypes from 'Store/Actions/Mensagens/Types';
+import { RetornoApi } from 'Infrastructure/Models/ApiModels/RetornoApi';
 
 interface MensagensState {
     mensagensErro: string[],
@@ -14,23 +15,21 @@ const initialState: MensagensState = {
     errosValidacao: []
 }
 
-const MensagensReducer = (state = initialState, action: MensagensTypes.MensagensActionTypes) => {
+const MensagensReducer = (state = initialState, action: MensagensTypes.MensagensActionTypes): MensagensState => {
     switch (action.type) {
-        case MensagensTypes.adicionarErroValidacao:
-            return { ...state, errosValidacao: [...state.errosValidacao, action.payload] }
-        case MensagensTypes.adicionarMensagemErro:
-            return { ...state, errosValidacao: [...state.mensagensErro, action.payload] }
-        case MensagensTypes.adicionarMensagemInformativa:
-            return { ...state, errosValidacao: [...state.mensagensInformativas, action.payload] }
-        case MensagensTypes.adicionarMensagemAlerta:
-            return { ...state, errosValidacao: [...state.mensagensAlertas, action.payload] }
-        case MensagensTypes.removerTodasMensagens:
+        case MensagensTypes.adicionarMensagensRecebidasType:
+            return ResolverMensagensRecebidas(action.payload);
+        case MensagensTypes.removerTodasMensagensType:
             return {
                 ...initialState
             }
         default:
             return state;
     }
+}
+
+const ResolverMensagensRecebidas = (payload: RetornoApi): MensagensState => {
+    return initialState;
 }
 
 export { MensagensReducer };

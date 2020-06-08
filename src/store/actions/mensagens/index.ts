@@ -1,43 +1,11 @@
-import * as MensagensActionTypes from './Types';
+import * as MensagensTypes from 'Store/Actions/Mensagens/Types';
+import { RetornoApi } from 'Infrastructure/Models/ApiModels/RetornoApi';
 
-const AdicionarErroValidacao = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
-    return {
-        type: MensagensActionTypes.adicionarErroValidacao,
-        payload: mensagem
-    }
-}
+export const AdicionarMensagensRecebidas = (retorno: RetornoApi): MensagensTypes.MensagensActionTypes => ({
+    type: MensagensTypes.adicionarMensagensRecebidasType,
+    payload: retorno
+});
 
-const AdicionarMensagemErro = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
-    return {
-        type: MensagensActionTypes.adicionarMensagemErro,
-        payload: mensagem
-    }
-}
-
-const AdicionarMensagemInformativa = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
-    return {
-        type: MensagensActionTypes.adicionarMensagemInformativa,
-        payload: mensagem
-    }
-}
-
-const AdicionarMensagemAlerta = (mensagem: string): MensagensActionTypes.MensagensActionTypes => {
-    return {
-        type: MensagensActionTypes.adicionarMensagemAlerta,
-        payload: mensagem
-    }
-}
-
-const RemoverTodasMensagens = (): MensagensActionTypes.MensagensActionTypes => {
-    return {
-        type: MensagensActionTypes.removerTodasMensagens,
-    }
-}
-
-export {
-    AdicionarErroValidacao,
-    AdicionarMensagemErro,
-    AdicionarMensagemInformativa,
-    AdicionarMensagemAlerta,
-    RemoverTodasMensagens,
-}
+export const RemoverTodasMensagens = (): MensagensTypes.MensagensActionTypes => ({
+    type: MensagensTypes.removerTodasMensagensType,
+})
