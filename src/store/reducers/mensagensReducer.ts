@@ -29,6 +29,7 @@ const MensagensReducer = (state = initialState, action: MensagensTypes.Mensagens
 }
 
 const ResolverMensagensRecebidas = (payload: RetornoApi): MensagensState => {
+    console.log(payload);
     return initialState;
 }
 

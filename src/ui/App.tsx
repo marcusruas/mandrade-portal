@@ -7,12 +7,14 @@ import Menus from './Layout/Menus';
 import Corpo from './Layout/Corpo';
 
 import { applyMiddleware, createStore } from 'redux'
-import promise from 'redux-promise';
 import { Provider } from 'react-redux';
+import promise from 'redux-promise';
+import MensageriaMiddleware from './Middlewares/MensageriaMiddleware';
+
 import { Reducers } from 'Store/Reducers'
 
 function App() {
-  const store = createStore(Reducers, applyMiddleware(promise));
+  const store = createStore(Reducers, applyMiddleware(promise, MensageriaMiddleware));
   return (
     <Provider store={store}>
       <React.Fragment>
