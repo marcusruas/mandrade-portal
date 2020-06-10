@@ -9,8 +9,6 @@ const MensageriaMiddleware = (store: MiddlewareAPI) => (next: Dispatch) => (acti
             store.dispatch(MensagensActions.AdicionarMensagensRecebidas(action.payload));
         }
     }
-
-    console.log(store.getState());
     return next(action);
 };
 

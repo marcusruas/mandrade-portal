@@ -13,7 +13,7 @@ export class RetornoApi {
     }
 
     PossuiMensagens() {
-        return this.Mensagens && this.Mensagens.length
+        return this.Mensagens && this.Mensagens.length > 0
     }
 }
 
@@ -53,5 +53,5 @@ export const ErroPadraoRequisicao = new RetornoErro(
     7050,
     'Não foi possível validar as informações passadas. Tente novamente mais tarde',
     'Não foi possível se conectar com a API para realizar a requisição.',
-    []
+    [new MensagemApi(3, 'Erro ao realizar requisição')]
 );
