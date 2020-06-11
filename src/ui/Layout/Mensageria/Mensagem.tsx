@@ -30,16 +30,16 @@ class Mensagem extends React.PureComponent<PropriedadesMensagem> {
     mostrarMensagem = () => {
         switch (this.props.Tipo) {
             case 0:
-                toast.info(this.props.Texto);
-                break;
-            case 1:
-                toast.warning(this.props.Texto);
-                break;
-            case 2:
                 toast.error(this.props.Texto);
                 break;
+            case 1:
+                toast.info(this.props.Texto);
+                break;
+            case 2:
+                toast.warning(this.props.Texto);
+                break;
             case 3:
-                toast.success(this.props.Texto);
+                toast.info(this.props.Texto);
                 break;
             default:
                 toast.dark(this.props.Texto)

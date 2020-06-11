@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Row, Col } from 'antd';
+import { Input, Button, Row, Col, Form } from 'antd';
 import { connect, ConnectedProps } from 'react-redux';
 import './index.css';
 
@@ -26,32 +26,51 @@ const conector = connect(mapStateToProps, mapDispatchToProps);
 type Propriedades = ConnectedProps<typeof conector>;
 
 class NovoGrupo extends React.PureComponent<Propriedades> {
-    adicionarGrupo = () => {
+    adicionarGrupo = (dados: any) => {
+        console.log(dados);
+
         this.props.AdicionarNovoGrupo(new Grupo(
             0,
-            "teste",
-            "teste123",
-            0
+            dados.nomeGrupo,
+            dados.descricaoGrupo,
+            dados.paiGrupo
         ))
     }
 
     render() {
+        const { Item } = Form;
+
         return (
             <React.Fragment>
                 <CabecalhoPagina Titulo="Cadastro de Grupos" />
                 <div className="NovoGrupo">
-                    <Row justify="space-between">
-                        <Col span={11}><Input placeholder="Nome do Grupo"></Input></Col>
-                        <Col span={11}><Input placeholder="Pai do Grupo"></Input></Col>
-                    </Row>
-                    <br />
-                    <Row>
-                        <Col span={24}><Input placeholder="Decrição do Grupo"></Input></Col>
-                    </Row>
-                    <br />
-                    <Row justify="end">
-                        <Col span={6}><Button type="primary" onClick={() => this.adicionarGrupo()}>Cadastrar</Button></Col>
-                    </Row>
+                    <Form onFinish={this.adicionarGrupo}>
+                        <br />
+                        <Row justify="space-between">
+                            <Col span={11}>
+                                <Item name="nomeGrupo" label="Nome do Grupo" rules={[{ required: true }]}>
+                                    <Input />
+                                </Item>
+                            </Col>
+                            <Col span={12}>
+                                <Item name="paiGrupo" label="Pai do Grupo">
+                                    <Input />
+                                </Item>
+                            </Col>
+                        </Row>
+                        <br />
+                        <Row>
+                            <Col span={24}>
+                                <Item name="descricaoGrupo" label="Descrição do Grupo">
+                                    <Input />
+                                </Item>
+                            </Col>
+                        </Row>
+                        <br />
+                        <Row justify="end">
+                            <Col span={6}><Button type="primary" htmlType="submit">Cadastrar</Button></Col>
+                        </Row>
+                    </Form>
                 </div>
             </React.Fragment>
         )

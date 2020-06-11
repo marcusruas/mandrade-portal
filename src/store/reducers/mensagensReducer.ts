@@ -31,17 +31,17 @@ const MensagensReducer = (state = initialState, action: MensagensTypes.Mensagens
 const ResolverMensagensRecebidas = (state: MensagensState, payload: RetornoApi): MensagensState => {
     if (payload.PossuiMensagens()) {
         const mensagensInformativas = payload.Mensagens
-            .filter(m => m.Tipo === 1)
-            .map(m => m.Texto);
+            .filter(m => m.tipo === 1)
+            .map(m => m.texto);
         const mensagensAlertas = payload.Mensagens
-            .filter(m => m.Tipo === 2)
-            .map(m => m.Texto);
+            .filter(m => m.tipo === 2)
+            .map(m => m.texto);
         const mensagensErro = payload.Mensagens
-            .filter(m => m.Tipo === 3)
-            .map(m => m.Texto);
+            .filter(m => m.tipo === 3)
+            .map(m => m.texto);
         const mensagensErroValidacao = payload.Mensagens
-            .filter(m => m.Tipo === 4)
-            .map(m => m.Texto);
+            .filter(m => m.tipo === 4)
+            .map(m => m.texto);
 
         return {
             ...state,
