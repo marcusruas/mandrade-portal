@@ -48,7 +48,7 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
                         <br />
                         <Row justify="space-between">
                             <Col span={11}>
-                                <Item name="nomeGrupo" label="Nome do Grupo" rules={[{ required: true }]}>
+                                <Item name="nomeGrupo" label="Nome do Grupo">
                                     <Input />
                                 </Item>
                             </Col>
