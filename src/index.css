@@ -44,7 +44,8 @@ body {
 }
 
 .Menus .ant-menu-submenu .ant-menu .ant-menu-item:hover,
-.Menus .ant-menu-submenu-title:hover
+.Menus .ant-menu-submenu-title:hover,
+.ant-menu-item:hover
 {
   color: #030852;
 }
@@ -54,6 +55,10 @@ body {
 .ant-menu-vertical-right .ant-menu-item::after, 
 .ant-menu-inline .ant-menu-item::after {
   border-right: none !important;
+}
+
+.ant-menu-inline .ant-menu-item {
+  width: 100%;
 }
 
 .Corpo {

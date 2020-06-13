@@ -10,6 +10,9 @@ const Menus = () => {
     return (
         <Sider width={300}>
             <Menu className="Menus" mode="inline" style={{ height: '100%', borderRight: 0 }}>
+                <Menu.Item>
+                    <Link to={Rotas.Home}>Home</Link>
+                </Menu.Item>
                 <SubMenu key="usuarioApi" title="Usuario API">
                     <SubMenu key="usuarioApiGrupos" title="Grupos">
                         <Menu.Item key="1">
