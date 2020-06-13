@@ -1,5 +1,8 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
+import { Link } from "react-router-dom";
+
+import * as Rotas from './routes';
 
 const Menus = () => {
     const { Sider } = Layout;
@@ -9,7 +12,9 @@ const Menus = () => {
             <Menu className="Menus" mode="inline" style={{ height: '100%', borderRight: 0 }}>
                 <SubMenu key="usuarioApi" title="Usuario API">
                     <SubMenu key="usuarioApiGrupos" title="Grupos">
-                        <Menu.Item key="1">Cadastrar Novo Grupo</Menu.Item>
+                        <Menu.Item key="1">
+                            <Link to={Rotas.NovoGrupo}>Cadastrar Novo Grupo</Link>
+                        </Menu.Item>
                     </SubMenu>
                 </SubMenu>
             </Menu>
