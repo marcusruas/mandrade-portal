@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
+
 import { MensagensReducer } from './MensagensReducer';
-import { UsuariosReducer } from './UsuariosReducer';
+import UsuarioApiReducers from './Usuarios';
 
 const Reducers = combineReducers({
     Mensagens: MensagensReducer,
-    Usuarios: UsuariosReducer,
+    ...UsuarioApiReducers,
 });
 
 export type ReducersType = ReturnType<typeof Reducers>;

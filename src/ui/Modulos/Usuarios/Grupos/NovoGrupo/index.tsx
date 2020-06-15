@@ -10,13 +10,15 @@ import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 import CabecalhoPagina from 'Ui/SharedComponents/CabecalhoPagina';
 
 const mapStateToProps = (state: Reducer.ReducersType) => ({
-    Grupos: state.Usuarios
+    Grupos: state.UsuarioApiGruposReducer
 });
 
 const mapDispatchToProps = (dispatch: any) => {
     const actions = {
         AdicionarNovoGrupo: (grupo: Grupo) =>
-            dispatch(GruposActions.AdicionarNovoGrupo(grupo))
+            dispatch(GruposActions.AdicionarNovoGrupo(grupo)),
+        ListarTodosGrupos: () =>
+            dispatch(GruposActions.ListarTodosGrupos()),
     }
 
     return actions;
@@ -26,20 +28,28 @@ const conector = connect(mapStateToProps, mapDispatchToProps);
 type Propriedades = ConnectedProps<typeof conector>;
 
 class NovoGrupo extends React.PureComponent<Propriedades> {
-    adicionarGrupo = (dados: any) => {
-        console.log(dados);
+    constructor(props: Propriedades) {
+        super(props);
+        this.setup();
+    }
 
-        this.props.AdicionarNovoGrupo(new Grupo(
+    setup = () => {
+        this.props.ListarTodosGrupos();
+    }
+
+    adicionarGrupo = (dados: any) => {
+        const novoGrupo = new Grupo(
             0,
-            dados.nomeGrupo,
-            dados.descricaoGrupo,
-            dados.paiGrupo
-        ))
+            dados.nomeGrupo || null,
+            dados.descricaoGrupo || null,
+            dados.paiGrupo || null
+        )
+
+        this.props.AdicionarNovoGrupo(novoGrupo);
     }
 
     render() {
         const { Item } = Form;
-
         return (
             <React.Fragment>
                 <CabecalhoPagina Titulo="Cadastro de Grupos" />
@@ -68,6 +78,7 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
                         </Row>
                         <br />
                         <Row justify="end">
+                            <Col span={6}><Button type="primary" onClick={() => console.log(this.props.Grupos)}>Teste</Button></Col>
                             <Col span={6}><Button type="primary" htmlType="submit">Cadastrar</Button></Col>
                         </Row>
                     </Form>
