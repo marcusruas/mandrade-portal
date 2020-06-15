@@ -1,12 +1,16 @@
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
-
 import * as GruposTypes from 'Store/Actions/Usuarios/Grupos/Types';
 import * as GruposService from 'Infrastructure/Services/Usuarios/Grupos';
-import { CriarActionChamadaAPIAsync } from '../../Utils';
+import { createAsyncAction } from 'redux-promise-middleware-actions';
 
-const AdicionarNovoGrupo = CriarActionChamadaAPIAsync(
+const AdicionarNovoGrupo = createAsyncAction(
     GruposTypes.adicionarGrupoType,
     async (grupo: Grupo) => await GruposService.AdicionarNovoGrupo(grupo)
 );
 
-export { AdicionarNovoGrupo }  
+const ListarTodosGrupos = createAsyncAction(
+    GruposTypes.listarTodosGruposType,
+    async () => await GruposService.ListarTodosGrupos()
+);
+
+export { AdicionarNovoGrupo, ListarTodosGrupos }  

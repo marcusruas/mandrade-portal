@@ -11,4 +11,9 @@ const AdicionarNovoGrupo = async (grupo: Grupo): Promise<RetornoApi.RetornoApi> 
     return await FormatarRequisicao(requisicao);
 }
 
-export { AdicionarNovoGrupo }
+const ListarTodosGrupos = async (): Promise<RetornoApi.RetornoApi> => {
+    const requisicao = axios.post(`${UriApi.USUARIOS_GRUPOS}/ListarTodosGrupos`);
+    return await FormatarRequisicao(requisicao);
+}
+
+export { AdicionarNovoGrupo, ListarTodosGrupos }

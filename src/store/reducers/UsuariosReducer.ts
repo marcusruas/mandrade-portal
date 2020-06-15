@@ -1,4 +1,5 @@
 import * as GruposTypes from 'Store/Actions/Usuarios/Grupos/Types';
+import { PadraoRetornoActions } from 'Store/Utils';
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 import { RetornoApi } from 'Infrastructure/Models/ApiModels/RetornoApi';
 import { toast } from 'react-toastify';
@@ -11,7 +12,8 @@ const initialState: UsuariosState = {
     Grupos: []
 }
 
-const UsuariosReducer = (state = initialState, action: any) => {
+const UsuariosReducer = (state = initialState, action: PadraoRetornoActions) => {
+    console.log(action);
     switch (action.type) {
         case GruposTypes.adicionarGrupoType:
             ResolverAdicionarGrupo(action.payload);
