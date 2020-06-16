@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Row, Col, Form } from 'antd';
+import { Input, Button, Row, Col, Form, Select } from 'antd';
 import { connect, ConnectedProps } from 'react-redux';
 import './index.css';
 
@@ -45,10 +45,15 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
         )
 
         this.props.AdicionarNovoGrupo(novoGrupo);
+        window.location.reload();
     }
 
     render() {
         const { Item } = Form;
+        const { Option } = Select;
+        const { GruposCadastrados } = this.props.Grupos;
+        const opcoes = GruposCadastrados.map(grupo => <Option value={grupo.Id}>{grupo.Nome}</Option>);
+
         return (
             <React.Fragment>
                 <CabecalhoPagina Titulo="Cadastro de Grupos" />
@@ -63,7 +68,11 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
                             </Col>
                             <Col span={12}>
                                 <Item name="paiGrupo" label="Pai do Grupo">
-                                    <Input />
+                                    <Select
+                                        placeholder={'Pesquise um grupo cadastrado.'}
+                                    >
+                                        {opcoes}
+                                    </Select>
                                 </Item>
                             </Col>
                         </Row>
@@ -77,7 +86,6 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
                         </Row>
                         <br />
                         <Row justify="end">
-                            <Col span={6}><Button type="primary" onClick={() => console.log(this.props.Grupos)}>Teste</Button></Col>
                             <Col span={6}><Button type="primary" htmlType="submit">Cadastrar</Button></Col>
                         </Row>
                     </Form>

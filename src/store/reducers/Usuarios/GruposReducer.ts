@@ -31,7 +31,12 @@ const ResolverListarTodosGrupos = (
         if (payload instanceof RetornoApi.RetornoSucesso) {
             return {
                 ...state,
-                GruposCadastrados: [...payload.Dados]
+                GruposCadastrados: payload.Dados.map((grupo: any) => new Grupo(
+                    grupo.id,
+                    grupo.nome,
+                    grupo.descricao,
+                    grupo.pai
+                ))
             }
         }
     }
