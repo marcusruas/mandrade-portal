@@ -27,12 +27,11 @@ const ResolverListarTodosGrupos = (
     state: UsuarioApiReducerState,
     payload: RetornoApi.RetornoApi
 ): UsuarioApiReducerState => {
-    console.log(payload);
     if (payload.Sucesso === true) {
         if (payload instanceof RetornoApi.RetornoSucesso) {
             return {
                 ...state,
-                GruposCadastrados: [...state.GruposCadastrados.concat(payload.Dados)]
+                GruposCadastrados: [...payload.Dados]
             }
         }
     }

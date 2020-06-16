@@ -28,8 +28,7 @@ const conector = connect(mapStateToProps, mapDispatchToProps);
 type Propriedades = ConnectedProps<typeof conector>;
 
 class NovoGrupo extends React.PureComponent<Propriedades> {
-    constructor(props: Propriedades) {
-        super(props);
+    componentDidMount() {
         this.setup();
     }
 
