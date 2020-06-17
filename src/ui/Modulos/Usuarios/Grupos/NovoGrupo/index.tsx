@@ -45,7 +45,6 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
         )
 
         this.props.AdicionarNovoGrupo(novoGrupo);
-        window.location.reload();
     }
 
     render() {

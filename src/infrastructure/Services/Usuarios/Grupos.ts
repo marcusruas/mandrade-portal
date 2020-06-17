@@ -9,8 +9,10 @@ import { toast } from 'react-toastify';
 const AdicionarNovoGrupo = async (grupo: Grupo): Promise<RetornoApi.RetornoApi> => {
     const requisicao = axios.post(`${UriApi.USUARIOS_GRUPOS}/IncluirNovoGrupo`, { ...grupo });
     const retorno = await FormatarRequisicao(requisicao);
-    if (retorno.Sucesso === true)
+    if (retorno.Sucesso === true) {
         toast.success('Grupo adicionado com sucesso!');
+        window.location.reload();
+    }
 
     return retorno;
 }
