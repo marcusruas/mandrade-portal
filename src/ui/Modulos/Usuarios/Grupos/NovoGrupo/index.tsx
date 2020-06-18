@@ -7,8 +7,6 @@ import * as Reducer from 'Store/Reducers/';
 import * as GruposActions from 'Store/Actions/Usuarios/Grupos/index';
 import Grupo from 'Infrastructure/Models/Usuarios/Grupo';
 
-import CabecalhoPagina from 'Ui/SharedComponents/CabecalhoPagina';
-
 const mapStateToProps = (state: Reducer.ReducersType) => ({
     Grupos: state.UsuarioApiGruposReducer
 });
@@ -55,7 +53,6 @@ class NovoGrupo extends React.PureComponent<Propriedades> {
 
         return (
             <React.Fragment>
-                <CabecalhoPagina Titulo="Cadastro de Grupos" />
                 <div className="NovoGrupo">
                     <Form onFinish={this.adicionarGrupo}>
                         <br />
