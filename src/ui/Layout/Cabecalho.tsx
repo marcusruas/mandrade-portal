@@ -4,6 +4,8 @@ import { MessageOutlined } from '@ant-design/icons';
 
 import Mensageria from './Mensageria';
 
+import './index.css';
+
 const Mensagens = (
     <Mensageria />
 )

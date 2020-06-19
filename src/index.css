@@ -8,27 +8,6 @@ body {
 
 /* Layout */
 
-.Cabecalho {
-  padding: none;
-  margin: none;
-  background-color: #2f54eb;
-}
-
-.Cabecalho_Titulo, .Cabecalho_Mensageria {
-  color: white;
-  font-weight: bolder;
-  font-size: 32px;
-  text-align: left;
-  width: 50%;
-  float: left;
-}
-
-.Cabecalho_Mensageria {
-  font-size: 16px;
-  text-align: right;
-  width: 50%;
-}
-
 .Menus{
   background-color: #1890ff;
   color: white;
