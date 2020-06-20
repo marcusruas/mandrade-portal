@@ -2,7 +2,7 @@
 .Cabecalho {
     padding: none;
     margin: none;
-    background-image: linear-gradient(#01295F, #437F97);
+    background-image: linear-gradient(#a3320b, #661d04);
 }
 
 .Cabecalho_Titulo, .Cabecalho_Mensageria {
@@ -18,4 +18,37 @@ float: left;
 font-size: 16px;
 text-align: right;
 width: 50%;
+}
+
+/* Menu */
+.Menus{
+    background-color: #d4a028;
+    color: white;
+}
+
+.Menus .ant-menu-submenu .ant-menu{
+    background-color: #2f54eb;
+    color: white;
+}
+
+.Menus .ant-menu-submenu-selected{
+    color: white;
+}
+
+.Menus .ant-menu-submenu .ant-menu .ant-menu-item:hover,
+.Menus .ant-menu-submenu-title:hover,
+.ant-menu-item:hover
+{
+    color: #030852;
+}
+
+.ant-menu-vertical .ant-menu-item::after, 
+.ant-menu-vertical-left .ant-menu-item::after, 
+.ant-menu-vertical-right .ant-menu-item::after, 
+.ant-menu-inline .ant-menu-item::after {
+    border-right: none !important;
+}
+
+.ant-menu-inline .ant-menu-item {
+    width: 100%;
 }

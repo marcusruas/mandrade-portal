@@ -6,40 +6,6 @@ body {
   background-color: #adc6ff;
 }
 
-/* Layout */
-
-.Menus{
-  background-color: #1890ff;
-  color: white;
-}
-
-.Menus .ant-menu-submenu .ant-menu{
-  background-color: #2f54eb;
-  color: white;
-}
-
-.Menus .ant-menu-submenu-selected{
-  color: white;
-}
-
-.Menus .ant-menu-submenu .ant-menu .ant-menu-item:hover,
-.Menus .ant-menu-submenu-title:hover,
-.ant-menu-item:hover
-{
-  color: #030852;
-}
-
-.ant-menu-vertical .ant-menu-item::after, 
-.ant-menu-vertical-left .ant-menu-item::after, 
-.ant-menu-vertical-right .ant-menu-item::after, 
-.ant-menu-inline .ant-menu-item::after {
-  border-right: none !important;
-}
-
-.ant-menu-inline .ant-menu-item {
-  width: 100%;
-}
-
 .Corpo {
   background-color: #eee;
   color: black;
