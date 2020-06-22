@@ -1,40 +1,24 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
-import { Layout } from 'antd';
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Cabecalho from './Layout/Cabecalho';
-import Menus from './Layout/Menus';
-import Corpo from './Layout/Corpo';
-
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
-
-import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux';
+import { Reducers } from 'Store/Reducers'
+import { applyMiddleware, createStore } from 'redux'
 import promise from 'redux-promise';
 import MensageriaMiddleware from './Middlewares/MensageriaMiddleware';
 
-import { Reducers } from 'Store/Reducers'
+import Layout from 'Ui/Layout/';
+
 
 function App() {
   const store = createStore(Reducers, applyMiddleware(promise, MensageriaMiddleware));
   return (
     <Provider store={store}>
-      <React.Fragment>
-        <Router>
-          <Layout style={{ minHeight: "100vh" }}>
-            <Cabecalho />
-            <Layout>
-              <Menus />
-              <Layout>
-                <Corpo />
-              </Layout>
-            </Layout>
-          </Layout>
-          <ToastContainer />
-        </Router>
-      </React.Fragment>
+      <Router>
+        <Layout />
+        <ToastContainer />
+      </Router>
     </Provider>
   );
 }

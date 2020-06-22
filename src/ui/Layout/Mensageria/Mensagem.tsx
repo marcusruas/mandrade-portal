@@ -49,13 +49,13 @@ class Mensagem extends React.PureComponent<PropriedadesMensagem> {
 
     render() {
         return (
-            <div
+            <section
                 className="Mensageria_Mensagem"
                 style={{ backgroundColor: GetCorByTipo(this.props.Tipo) }}
                 onClick={() => this.mostrarMensagem()}
             >
                 {this.formatarMensagem(this.props.Texto)}
-            </div>
+            </section>
         )
     }
 }

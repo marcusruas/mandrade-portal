@@ -1,53 +1,9 @@
 body {
+  padding: none;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Lucida Console", Monaco, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #adc6ff;
-}
-
-.Corpo {
-  background-color: #eee;
-  color: black;
-}
-
-/* Toast */
-.Toastify__toast--success
-.Toastify__toast--info
-.Toastify__toast--warning
-.Toastify__toast--error {
-  padding-left: 3%;
-  border-radius: 2%;
-  font-family: -apple-system, BlinkMacSystemFont, "Lucida Console", Monaco, monospace;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Mensageria */
-.Mensageria {
-  width: 300px;
-  height: 400px;
-  background-color: #002766;
-  border-radius: 2px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.Mensageria_Controle {
-  width: 300px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: #1890ff;
-}
-
-.Mensageria_Mensagem {
-  display: block;
-  width: 300px;
-  height: 30px;
-  line-height: 30px;
-  margin: 0 auto;
-  color: white;
-  border-bottom: 1px solid #2f54eb;
-  padding-left: 5px;
-  cursor: pointer;
+  height: 100vh;
 }

@@ -27,19 +27,19 @@ type Propriedades = ConnectedProps<typeof conector>;
 class Mensageria extends React.PureComponent<Propriedades> {
     render() {
         return (
-            <div className="Mensageria">
-                <div className="Mensageria_Controle">
+            <section className="Mensageria">
+                <section className="Mensageria_Controle">
                     <Button
                         danger
                         icon={< CloseCircleOutlined />}
                         onClick={() => this.props.removerTodasMensagens()}
                     >Excluir Tudo</Button>
-                </div>
+                </section>
                 {this.props.Mensagens.errosValidacao.map(msg => (<Mensagem Tipo={3} Texto={msg} />))}
                 {this.props.Mensagens.mensagensErro.map(msg => (<Mensagem Tipo={0} Texto={msg} />))}
                 {this.props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}
                 {this.props.Mensagens.mensagensInformativas.map(msg => (<Mensagem Tipo={1} Texto={msg} />))}
-            </div>
+            </section>
         )
     }
 }

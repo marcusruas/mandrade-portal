@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd'
 import { Switch, Route } from "react-router-dom";
-import CabecalhoPagina from 'Ui/SharedComponents/CabecalhoPagina';
+import CabecalhoPagina from 'Ui/SharedComponents/CabecalhoPagina/';
 import { useLocation } from 'react-router-dom'
 
-import * as Rotas from './routes';
+import * as Rotas from '../routes';
 
 import NovoGrupo from 'Ui/Modulos/Usuarios/Grupos/NovoGrupo/';
 import Home from 'Ui/Modulos/Home';

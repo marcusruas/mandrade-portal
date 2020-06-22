@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from "react-router-dom";
 
-import * as Rotas from './routes';
+import * as Rotas from '../routes';
 
 const Menus = () => {
     const { Sider } = Layout;

@@ -1,54 +1,27 @@
 /* Cabeçalho */
 .Cabecalho {
-    padding: none;
-    margin: none;
     background-image: linear-gradient(#a3320b, #661d04);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Cabecalho_Titulo, .Cabecalho_Mensageria {
-color: white;
-font-weight: bolder;
-font-size: 32px;
-text-align: left;
-width: 50%;
-float: left;
+.Cabecalho_Titulo {
+    width: 50%;
+    padding-left: 2%;
+    text-align: left;
+}
+
+.Cabecalho_Titulo span {
+    color: white;
+    font-weight: bolder;
+    font-size: 32px;
 }
 
 .Cabecalho_Mensageria {
-font-size: 16px;
-text-align: right;
-width: 50%;
-}
-
-/* Menu */
-.Menus{
-    background-color: #d4a028;
-    color: white;
-}
-
-.Menus .ant-menu-submenu .ant-menu{
-    background-color: #2f54eb;
-    color: white;
-}
-
-.Menus .ant-menu-submenu-selected{
-    color: white;
-}
-
-.Menus .ant-menu-submenu .ant-menu .ant-menu-item:hover,
-.Menus .ant-menu-submenu-title:hover,
-.ant-menu-item:hover
-{
-    color: #030852;
-}
-
-.ant-menu-vertical .ant-menu-item::after, 
-.ant-menu-vertical-left .ant-menu-item::after, 
-.ant-menu-vertical-right .ant-menu-item::after, 
-.ant-menu-inline .ant-menu-item::after {
-    border-right: none !important;
-}
-
-.ant-menu-inline .ant-menu-item {
-    width: 100%;
+    width: 50%;
+    font-size: 16px;
+    text-align: right;
+    background-color: gray;
 }

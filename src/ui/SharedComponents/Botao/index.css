@@ -1,0 +1,17 @@
+.Botao {
+    background-color: blue;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.Botao_interior {
+    background: red;
+    width: 20%;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 1;
+}
