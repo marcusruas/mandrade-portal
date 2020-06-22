@@ -8,7 +8,7 @@ const Cabecalho = () => {
                 <span>PORTAL MANDRADE</span>
             </section>
             <section className="Cabecalho_Mensageria">
-                hd
+                <Mensageria />
             </section>
         </header>
     );

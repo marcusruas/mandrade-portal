@@ -21,7 +21,9 @@
 
 .Cabecalho_Mensageria {
     width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
     font-size: 16px;
     text-align: right;
-    background-color: gray;
 }

@@ -1,6 +1,7 @@
 body {
   padding: none;
   margin: 0;
+  line-height: 1;
   font-family: -apple-system, BlinkMacSystemFont, "Lucida Console", Monaco, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
