@@ -24,8 +24,8 @@ const GetCorByTipo = (tipo: number) => {
 
 class Mensagem extends React.PureComponent<PropriedadesMensagem> {
     formatarMensagem = (mensagem: string) =>
-        mensagem && mensagem.length > 30 ?
-            mensagem.substring(0, 27) + '...' : mensagem;
+        mensagem && mensagem.length > 18 ?
+            mensagem.substring(0, 18) + '...' : mensagem;
 
     mostrarMensagem = () => {
         switch (this.props.Tipo) {

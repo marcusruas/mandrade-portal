@@ -5,17 +5,21 @@ interface PropriedadesBotao {
     Texto: string,
     Estilo?: CSSProperties,
     Tipo?: string,
-    onClick: () => void
+    Classe?: string,
+    onClick?: () => void
 }
 
 const Botao = (props: PropriedadesBotao) => {
     const classeTipo = props.Tipo ? `Botao_${props.Tipo}` : 'Botao_Padrao';
 
+    const propriedadesPassadas = {
+        className: `Botao ${classeTipo} ${props.Classe}`,
+        style: props.Estilo ? { ...props.Estilo } : {},
+        onClick: props.onClick || (() => null)
+    }
+
     return (
-        <section
-            className={`Botao ${classeTipo}`}
-            style={props.Estilo ? { ...props.Estilo } : {}}
-            onClick={props.onClick}>
+        <section {...propriedadesPassadas}>
             <span className="Botao_interior">{props.Texto}</span>
         </section>
     );

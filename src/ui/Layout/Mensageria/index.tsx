@@ -19,32 +19,33 @@ const mapDispatchToProps = (dispatch: any) => {
     return actions;
 }
 
-const AbrirMensageria = () => {
-
-}
-
 const conector = connect(mapStateToProps, mapDispatchToProps);
 type Propriedades = ConnectedProps<typeof conector>;
 
-const PainelMensageria = (props: Propriedades) => {
-    return (
-        <section className="Mensageria">
-            <section className="Mensageria_Controle">
-                <Botao Texto="Ver Mensagens" onClick={() => console.log('teste')} />
+class Mensageria extends React.PureComponent<Propriedades>{
+    Mensagens = () => {
+        return (
+            <section className="Mensageria_Mensagens">
+                <section className="Mensageria_BtnRemoverTodas">
+                    <Botao Tipo="Mensageria" Texto="Excluir Todas" />
+                </section>
+                <section className="Mensageria_Conteudo">
+                    {this.props.Mensagens.errosValidacao.map(msg => (<Mensagem Tipo={3} Texto={msg} />))}
+                    {this.props.Mensagens.mensagensErro.map(msg => (<Mensagem Tipo={0} Texto={msg} />))}
+                    {this.props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}
+                    {this.props.Mensagens.mensagensInformativas.map(msg => (<Mensagem Tipo={1} Texto={msg} />))}
+                </section>
             </section>
-            {props.Mensagens.errosValidacao.map(msg => (<Mensagem Tipo={3} Texto={msg} />))}
-            {props.Mensagens.mensagensErro.map(msg => (<Mensagem Tipo={0} Texto={msg} />))}
-            {props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}
-            {props.Mensagens.mensagensInformativas.map(msg => (<Mensagem Tipo={1} Texto={msg} />))}
-        </section>
-    );
-}
+        )
+    }
 
-class Mensageria extends React.PureComponent<Propriedades> {
     render() {
         return (
-            PainelMensageria(this.props)
-        )
+            <section className="Mensageria">
+                <Botao Classe="BtnAbrirMensageria" Texto="Ver Mensagens" />
+                {this.Mensagens()}
+            </section>
+        );
     }
 }
 
