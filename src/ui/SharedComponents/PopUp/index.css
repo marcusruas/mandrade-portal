@@ -1,0 +1,50 @@
+.PopUp {
+    display: block;
+    width: 280px;
+    height: 80px;
+    position: absolute;
+    z-index: 1;
+    top: 2%;
+    /* right: calc((-1%) + (-280px)); */
+    right: 1%;
+    border-radius: 7px;
+    background-color: green;
+    animation-name: abrir;
+    animation-duration: 0.8s;
+    overflow: hidden;
+}
+
+.PopUp_Cabecalho {
+    height: 20%;
+}
+
+.PopUp span {
+    height: 10%;
+    padding-left: 1%;
+    color: white;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.PopUp:active {
+    animation-name: fechar;
+    animation-duration: 1s;
+}
+
+@keyframes fechar {
+    from {
+        right: 1%;
+    }
+    to {
+        right: calc((-1%) + (-280px));
+    };
+}
+
+@keyframes abrir {
+    from {
+        right: calc((-1%) + (-280px));
+    }
+    to {
+        right: 1%
+    };
+}

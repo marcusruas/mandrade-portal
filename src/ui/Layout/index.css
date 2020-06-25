@@ -1,6 +1,7 @@
 /* Cabeçalho */
 .Cabecalho {
     background-image: linear-gradient(#a3320b, #661d04);
+    border-bottom: 1px solid #A40606;
     height: 10vh;
     display: flex;
     justify-content: center;
@@ -28,6 +29,7 @@
     text-align: right;
 }
 
+/* Mensageria */
 .Mensageria_Mensagens {
     display: block;
     width: 150px;
@@ -75,4 +77,11 @@
     height: 76%;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+/* Menus */
+.Menus {
+    width: 20%;
+    height: 90vh;
+    background-image: linear-gradient(#F5BB00, #EC9F05);
 }
