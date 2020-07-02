@@ -14,7 +14,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <PopUp />
+        {/* <PopUp /> */}
         <Layout />
       </Router>
     </Provider>
