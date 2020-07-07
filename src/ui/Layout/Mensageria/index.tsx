@@ -25,11 +25,11 @@ type Propriedades = ConnectedProps<typeof conector>;
 class Mensageria extends React.PureComponent<Propriedades>{
     Mensagens = () => {
         return (
-            <section className="Mensageria_Mensagens">
-                <section className="Mensageria_BtnRemoverTodas">
+            <section className="Mensageria__Mensagens">
+                <section className="Mensageria__BtnRemoverTodas">
                     <Botao Tipo="Mensageria" Texto="Excluir Todas" />
                 </section>
-                <section className="Mensageria_Conteudo">
+                <section className="Mensageria__Conteudo">
                     {this.props.Mensagens.errosValidacao.map(msg => (<Mensagem Tipo={3} Texto={msg} />))}
                     {this.props.Mensagens.mensagensErro.map(msg => (<Mensagem Tipo={0} Texto={msg} />))}
                     {this.props.Mensagens.mensagensAlertas.map(msg => (<Mensagem Tipo={2} Texto={msg} />))}

@@ -50,7 +50,7 @@ class Mensagem extends React.PureComponent<PropriedadesMensagem> {
     render() {
         return (
             <section
-                className="Mensageria_Mensagem"
+                className="Mensageria__Mensagem"
                 style={{ backgroundColor: GetCorByTipo(this.props.Tipo) }}
                 onClick={() => this.mostrarMensagem()}
             >

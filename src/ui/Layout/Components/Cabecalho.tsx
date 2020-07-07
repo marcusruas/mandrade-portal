@@ -4,10 +4,10 @@ import Mensageria from '../Mensageria';
 const Cabecalho = () => {
     return (
         <header className="Cabecalho">
-            <section className="Cabecalho_Titulo">
+            <section className="Cabecalho__Titulo">
                 <span>PORTAL MANDRADE</span>
             </section>
-            <section className="Cabecalho_Mensageria">
+            <section className="Cabecalho__Mensageria">
                 <Mensageria />
             </section>
         </header>
