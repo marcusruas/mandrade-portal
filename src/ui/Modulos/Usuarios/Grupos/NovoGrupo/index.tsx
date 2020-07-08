@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Button, Row, Col, Form, Select } from 'antd';
 import { connect, ConnectedProps } from 'react-redux';
-import './index.css';
+import './index.scss';
 
 import * as Reducer from 'Store/Reducers/';
 import * as GruposActions from 'Store/Actions/Usuarios/Grupos/index';

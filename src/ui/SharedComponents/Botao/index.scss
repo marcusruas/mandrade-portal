@@ -1,0 +1,58 @@
+.Botao {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.Botao__interior {
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+}
+
+/* Tipos de Botão*/
+/* Padrao */
+.Botao--Padrao {
+    background-image: linear-gradient(#EFF6EE, #9197AE);
+    transition: box-shadow 0.2s;
+    color:#191516;
+
+    &:hover {
+        background-image: linear-gradient(#9197AE, #EFF6EE);
+        -webkit-box-shadow: 0px 0px 3px 3px rgba(66,66,66,0.75); 
+        box-shadow: 0px 0px 3px 3px rgba(66,66,66,0.75);
+        transition: all 0.2s;
+    }
+    
+    &:active {
+        -webkit-box-shadow: 0px 0px 3px 3px #32373B; 
+        box-shadow: 0px 0px 3px 3px #32373B;
+        color: black;
+    }
+}
+
+/* Mensageria */
+.Botao--Mensageria {
+    background-image: linear-gradient(#772014, #4F000B);
+    transition: box-shadow 0.2s;
+    color:#E8DDB5;
+
+    &:hover {
+        background-image: linear-gradient(#4F000B, #772014);
+        -webkit-box-shadow: 0px 0px 3px 3px rgba(66,66,66,0.75); 
+        box-shadow: 0px 0px 3px 3px rgba(66,66,66,0.75);
+        transition: all 0.2s;
+    }
+    
+    &:active {
+        -webkit-box-shadow: 0px 0px 3px 3px #011627; 
+        box-shadow: 0px 0px 3px 3px #011627;
+        color: white;
+    }
+}
+
+

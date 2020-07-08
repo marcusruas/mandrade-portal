@@ -11,40 +11,39 @@
     background-color: black;
     border: 1px solid white;
     
+    .PopUp__Cabecalho {
+        color: white;
+        text-align: justify;
+    }
 }
 
-.PopUp_Abrir {
+.PopUp--Abrir {
     animation-name: abrir;
     animation-duration: 0.8s;
     right: 1%;
 }
 
-.PopUp_Fechar {
+.PopUp--Fechar {
     animation-name: fechar;
     animation-duration: 1s;
 }
 
-.PopUp_Cabecalho {
-    color: white;
-    text-align: justify;
-}
-
-.PopUp_Sucesso {
+.PopUp--Sucesso {
     background-color: #139A43;
     border: 1px solid greenyellow;
 }
 
-.PopUp_Erro {
+.PopUp--Erro {
     background-color: #C1292E;
     border: 1px solid rgb(248, 112, 112);
 }
 
-.PopUp_Alerta {
+.PopUp--Alerta {
     background-color: #E6AF2E;
     border: 1px solid yellow;
 }
 
-.PopUp_Informativo {
+.PopUp--Informativo {
     background-color: #2274A5;
     border: 1px solid blue;
 }

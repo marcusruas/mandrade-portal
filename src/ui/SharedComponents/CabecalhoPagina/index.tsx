@@ -8,7 +8,7 @@ interface ParametrosCabecalho {
 const CabecalhoPagina = (parametros: ParametrosCabecalho) => {
     return (
         <div className="CabecalhoPagina">
-            <h1 className="CabecalhoPagina_Titulo">{parametros.Titulo.toUpperCase()}</h1>
+            <h1 className="CabecalhoPagina__Titulo">{parametros.Titulo.toUpperCase()}</h1>
         </div>
     )
 }

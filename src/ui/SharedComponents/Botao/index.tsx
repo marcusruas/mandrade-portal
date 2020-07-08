@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import './index.css';
+import './index.scss';
 
 interface PropriedadesBotao {
     Texto: string,
@@ -10,7 +10,7 @@ interface PropriedadesBotao {
 }
 
 const Botao = (props: PropriedadesBotao) => {
-    const classeTipo = props.Tipo ? `Botao_${props.Tipo}` : 'Botao_Padrao';
+    const classeTipo = props.Tipo ? `Botao--${props.Tipo}` : 'Botao--Padrao';
 
     const propriedadesPassadas = {
         className: `Botao ${classeTipo} ${props.Classe}`,
@@ -20,7 +20,7 @@ const Botao = (props: PropriedadesBotao) => {
 
     return (
         <section {...propriedadesPassadas}>
-            <span className="Botao_interior">{props.Texto}</span>
+            <span className="Botao__interior">{props.Texto}</span>
         </section>
     );
 }

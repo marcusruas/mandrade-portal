@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-import './index.css';
+import './index.scss';
 import App from 'Ui/App';
 
 ReactDOM.render(

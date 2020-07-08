@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
 interface PropriedadesPopUp {
 }
@@ -22,11 +22,11 @@ class PopUp extends React.PureComponent<PropriedadesPopUp, StatePopUp> {
     }
 
     render() {
-        const classeTipo = this.state.Tipo ? `PopUp_${this.state.Tipo}` : 'PopUp_Sucesso';
-        const popUpAberto = this.state.Aberto === true ? 'PopUp_Abrir' : '';
+        const classeTipo = this.state.Tipo ? `PopUp--${this.state.Tipo}` : 'PopUp--Sucesso';
+        const popUpAberto = this.state.Aberto === true ? 'PopUp--Abrir' : '';
         return (
             <section className={`PopUp ${classeTipo} ${popUpAberto}`}>
-                <span className="PopUp_Cabecalho">
+                <span className="PopUp__Cabecalho">
                     {this.state.Texto}
                 </span>
             </section>
