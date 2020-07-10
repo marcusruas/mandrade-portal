@@ -1,15 +1,17 @@
 import React from 'react';
+import Menu from './Menu';
 import { Link } from "react-router-dom";
 
-import * as Rotas from '../routes';
+import * as Rotas from '../../routes';
 
 {/* <Link to={Rotas.Home.Rota}>Home</Link>
-<Link to={Rotas.NovoGrupo.Rota}>Cadastrar Novo Grupo</Link> */}
+ */}
 
 const Menus = () => {
     return (
         <aside className="Menus">
-
+            <Menu><Link to={Rotas.Home.Rota}>Home</Link></Menu>
+            <Menu><Link to={Rotas.NovoGrupo.Rota}>Cadastrar Novo Grupo</Link></Menu>
         </aside>
     );
 }

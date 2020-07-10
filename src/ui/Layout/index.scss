@@ -1,7 +1,11 @@
+$cor_principal_vermelha: #a3320b;
+$cor_secundaria_vermelha: #661d04;
+$cor_principal_bordas: #A40606;
+
 /* Cabeçalho */
 .Cabecalho {
-    background-image: linear-gradient(#a3320b, #661d04);
-    border-bottom: 1px solid #A40606;
+    background-image: linear-gradient($cor_principal_vermelha, $cor_secundaria_vermelha);
+    border-bottom: 1px solid $cor_principal_bordas;
     height: 10vh;
     display: flex;
     justify-content: center;
@@ -87,5 +91,32 @@
 .Menus {
     width: 20%;
     height: 90vh;
+    padding-top: 2%;
+    padding-bottom: 2%;
     background-image: linear-gradient(#F5BB00, #EC9F05);
+
+    .Menus__Menu {
+        width: 100%;
+        height: 8%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $cor_principal_vermelha;
+        border-top:1px solid $cor_principal_bordas;
+        transition-property: background-color, font-weight, text-shadow;
+        transition-duration: 0.5s;
+        cursor: pointer;
+
+        & a {
+            color: white;
+            font-size: 16px;
+        }
+
+        &:hover {
+            background-color: $cor_secundaria_vermelha;
+            font-weight: bold;
+            text-shadow: gray 0px 1px;
+        }
+    }
 }

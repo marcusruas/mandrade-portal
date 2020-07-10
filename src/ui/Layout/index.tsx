@@ -1,6 +1,6 @@
 import React from 'react';
 import Cabecalho from './Components/Cabecalho';
-import Menus from './Components/Menus';
+import Menus from './Components/Menus/';
 
 import './index.scss';
 
