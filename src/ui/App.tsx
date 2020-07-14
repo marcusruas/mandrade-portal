@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from 'Ui/Layout/';
-import PopUp from 'Ui/SharedComponents/PopUp/';
 
 import { Provider } from 'react-redux';
 import { Reducers } from 'Store/Reducers'

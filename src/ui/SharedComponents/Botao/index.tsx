@@ -13,10 +13,12 @@ const Botao = (props: PropriedadesBotao) => {
     const classeTipo = props.Tipo ? `Botao--${props.Tipo}` : 'Botao--Padrao';
 
     const propriedadesPassadas = {
-        className: `Botao ${classeTipo} ${props.Classe}`,
+        className: `Botao ${classeTipo} ${props.Classe ? props.Classe : ''}`,
         style: props.Estilo ? { ...props.Estilo } : {},
         onClick: props.onClick || (() => null)
     }
+
+    console.log(propriedadesPassadas);
 
     return (
         <section {...propriedadesPassadas}>

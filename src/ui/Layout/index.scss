@@ -61,6 +61,7 @@ $cor_principal_bordas: #A40606;
     }
 
     .Mensageria__Conteudo {
+        display: hidden;
         width: 100%;
         height: 76%;
         overflow-y: scroll;
@@ -77,12 +78,11 @@ $cor_principal_bordas: #A40606;
 
     &:hover {
         .Mensageria__Mensagens {
-            display: block;
+            opacity: 1;
             width: 230px;
             height: 300px;
             right: 6em;
             top: 3.3em;
-            opacity: 1;
         }
     }
 }
@@ -108,7 +108,7 @@ $cor_principal_bordas: #A40606;
         transition-duration: 0.5s;
         cursor: pointer;
 
-        & a {
+        &, & a {
             color: white;
             font-size: 16px;
         }
@@ -117,6 +117,15 @@ $cor_principal_bordas: #A40606;
             background-color: $cor_secundaria_vermelha;
             font-weight: bold;
             text-shadow: gray 0px 1px;
+
+            .Menus__Menu__Filho {
+                position: absolute;
+                left: 21%;
+                width: 250px;
+                min-height: 80px;
+                background-color: blue;
+                border-radius: 5px;
+            }
         }
     }
 }
