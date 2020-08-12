@@ -113,12 +113,17 @@ $cor_principal_bordas: #A40606;
             font-size: 16px;
         }
 
+        .Menus__Menu__Filhos {
+            display: none;
+        }
+
         &:hover {
             background-color: $cor_secundaria_vermelha;
             font-weight: bold;
             text-shadow: gray 0px 1px;
 
-            .Menus__Menu__Filho {
+            .Menus__Menu__Filhos {
+                display: block;
                 position: absolute;
                 left: 21%;
                 width: 250px;

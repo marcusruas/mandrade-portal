@@ -18,8 +18,6 @@ const Botao = (props: PropriedadesBotao) => {
         onClick: props.onClick || (() => null)
     }
 
-    console.log(propriedadesPassadas);
-
     return (
         <section {...propriedadesPassadas}>
             <span className="Botao__interior">{props.Texto}</span>
