@@ -8,7 +8,7 @@ const Menus = () => {
     return (
         <aside className="Menus">
             <Menu><Link style={{ width: '100%' }} to={Rotas.Home.Rota}>Home</Link></Menu>
-            <Menu>UsuarioAPI</Menu>
+            <Menu Titulo="UsuarioAPI"><Link to={Rotas.NovoGrupo.Rota}>Cadastrar Novo Grupo</Link></Menu>
         </aside>
     );
 }
